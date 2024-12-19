@@ -85,7 +85,7 @@ public:
     ~Order() {
         delete[] products; //деструктор для очищения памяти
     };
-    //void addProduct(Product* product); //Выделение места под Products
+    void addProduct(Product* product); //Выделение места под Products
     void get(int* client_id, int* num_products, int* total_price); //Получение данных класса
     void set(int client_id, int num_products, int total_price); //Получение значений переменных-членов класса
     void listProducts(Product* product, int count);
@@ -124,5 +124,39 @@ public:
     void listOrders(Order* order, int count);
     int listorder_count() {
         return orderCount;
+    };
+};
+
+
+//Класс для хранения информации о магазине
+class Store {
+private:
+    Client* clients;
+    int num_clients;
+    Category* categories;
+    int num_categories;
+    Supplier* suppliers;
+    int num_suppliers;
+public:
+    Store(); //конструктор
+    ~Store() {
+        delete[] clients;
+        delete[] categories;
+        delete[] suppliers;
+    };
+    void addClient(Client* client);
+    void addCategory(Category* category);
+    void addSupplier(Supplier* supplier);
+    void listClients(Client* client, int count);
+    void listCategories(Category* category, int count);
+    void listSuppliers(Supplier* supplier, int count);
+    int listnum_categories() {
+        return num_categories;
+    };
+    int listnum_suppliers() {
+        return num_suppliers;
+    };
+    int listnum_clients() {
+        return num_clients;
     };
 };
