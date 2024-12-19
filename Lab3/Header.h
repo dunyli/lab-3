@@ -90,3 +90,22 @@ public:
     void set(int client_id, int num_products, int total_price); //Получение значений переменных-членов класса
     void listProducts(Product* product, int count);
 };
+
+// Структура для хранения информации о количестве товара
+class Storehouse {
+private:
+    std::unique_ptr<Product[]> products;
+    int num_products;
+public:
+    Storehouse(); //конструктор
+    //~Storehouse() {
+    //    delete[] products; //деструктор для очищения памяти
+    //};
+    void addProduct(Product& newProduct);
+    void editProduct(int product_id, char* name, int price, int volume, int category_id, int supplier_id);
+    void listStorehouse(Product* product, int count);
+    void get(int num_products); //Получение данных класса
+    int listnum_products() {
+        return num_products;
+    };
+};
