@@ -57,3 +57,18 @@ public:
     void set(char* name, char* phone, char* address); //Получение значений переменных-членов класса
 };
 
+//Класс для хранения данных о категории товара
+class Category {
+private:
+    char name[50];   // Название категории ("Корм", "Игрушки", "Аксессуары")
+    Product* products;
+    int num_products;
+public:
+    Category(char* name); //конструктор с параметрами
+    ~Category() {
+        delete[] products; //деструктор для очищения памяти
+    }
+    //void addProduct(Product* product); //Выделение места под Products
+    void get(char* name); //Получение данных класса
+    void set(char* name); //Получение значений переменных-членов класса
+};
