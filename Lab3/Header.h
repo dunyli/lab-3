@@ -72,3 +72,21 @@ public:
     void get(char* name); //Получение данных класса
     void set(char* name); //Получение значений переменных-членов класса
 };
+
+//Класс для хранения информации о заказе
+class Order {
+private:
+    int client_id;
+    Product* products;
+    int num_products;
+    int total_price;
+public:
+    Order(); //конструктор
+    ~Order() {
+        delete[] products; //деструктор для очищения памяти
+    };
+    //void addProduct(Product* product); //Выделение места под Products
+    void get(int* client_id, int* num_products, int* total_price); //Получение данных класса
+    void set(int client_id, int num_products, int total_price); //Получение значений переменных-членов класса
+    void listProducts(Product* product, int count);
+};
