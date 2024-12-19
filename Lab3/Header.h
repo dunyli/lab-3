@@ -1,4 +1,5 @@
 #pragma once
+
 //Класс для хранения данных о клиенте
 class Client {
 private:
@@ -37,3 +38,22 @@ public:
         return count;
     };
 };
+
+//Класс для хранения данных о поставщике
+class Supplier {
+private:
+    char name[50];
+    char phone[20];
+    char address[100];
+    Product* products;
+    int num_products;
+public:
+    Supplier(char* name, char* phone, char* address); //конструктор с параметрами
+    ~Supplier() {
+        delete[] products; //деструктор для очищения памяти
+    };
+    //void addProduct(Product* product); //Выделение места под Products
+    void get(char* name, char* phone, char* address); //Получение данных класса
+    void set(char* name, char* phone, char* address); //Получение значений переменных-членов класса
+};
+
