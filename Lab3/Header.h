@@ -109,3 +109,20 @@ public:
         return num_products;
     };
 };
+
+// ласс дл€ хранени€ истории заказов
+class OrderHistory {
+private:
+    Order* orders; // ћассив заказов
+    int orderCount;
+public:
+    OrderHistory();
+    ~OrderHistory() {
+        delete[] orders; //деструктор дл€ очищени€ пам€ти
+    };
+    void addOrder(Order* order);
+    void listOrders(Order* order, int count);
+    int listorder_count() {
+        return orderCount;
+    };
+};
