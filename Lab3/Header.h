@@ -29,7 +29,7 @@ public:
         category_id = p.category_id;
         supplier_id = p.supplier_id;
     }
-    void get(std::string& name, int* price, int* count, int* category_id, int* supplier_id); //Получение данных класса
+    void get(std::string &name, int* price, int* count, int* category_id, int* supplier_id); //Получение данных класса
     void set(std::string name, int price, int count, int category_id, int supplier_id); //Получение значений переменных-членов класса
     int getPrice() {
         return price;
